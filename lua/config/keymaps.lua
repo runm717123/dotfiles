@@ -10,6 +10,8 @@ cowboy()
 vim.keymap.set("n", "<leader>bh", ":BufferLineMovePrev<CR>", { desc = "Move Buffer Backward" })
 vim.keymap.set("n", "<leader>bl", ":BufferLineMoveNext<CR>", { desc = "Move Buffer Forward" })
 
+vim.keymap.set("n", "te", ":tabedit")
+
 -- Select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
