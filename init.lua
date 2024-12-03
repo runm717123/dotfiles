@@ -6,7 +6,7 @@ vim.opt.fileformats = { "dos", "unix" } -- Accept both CRLF and LF
 
 -- avoid eslint warning to insert "cr"
 vim.cmd([[
-  autocmd BufWritePre * :set fileformat=unix
+ autocmd BufWritePre * :set fileformat=unix
 ]])
 
 -- bootstrap lazy.nvim, LazyVim and your plugins
