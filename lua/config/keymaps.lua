@@ -5,19 +5,22 @@
 
 local cowboy = require("mine.cowboy")
 
-cowboy()
+cowboy() -- prevent bad behaviour
 
 vim.keymap.set("n", "<leader>bh", ":BufferLineMovePrev<CR>", { desc = "Move Buffer Backward" })
 vim.keymap.set("n", "<leader>bl", ":BufferLineMoveNext<CR>", { desc = "Move Buffer Forward" })
 
 vim.keymap.set("n", "te", ":tabedit")
 
+-- Increment/decrement
+vim.keymap.set("n", "+", "<C-a>")
+vim.keymap.set("n", "-", "<C-x>")
+
 -- Select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
 local noRemapAndSilent = { noremap = true, silent = true }
 
--- Ctrl+Backspace: Delete the current line
-vim.keymap.set("i", "<C-h>", "<Esc>cc", opts) -- Insert mode
--- Alt+Backspace: Delete the previous word
-vim.keymap.set("i", "<A-BS>", "<C-w>", opts) -- Insert mode
+-- delete word shortcut
+vim.keymap.set("i", "<A-BS>", "<Esc>cc", noRemapAndSilent) -- Insert mode
+vim.keymap.set("i", "<C-h>", "<C-w>", noRemapAndSilent) -- Insert mode
