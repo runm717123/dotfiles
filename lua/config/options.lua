@@ -3,5 +3,6 @@
 -- Add any additional options here
 
 vim.opt.winbar = "%=%m %f"
-vim.opt.fileformats = "dos"
+vim.opt.fileformat = "unix"
+vim.opt.fileformats = "unix"
 vim.opt.wrap = true
