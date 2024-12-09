@@ -27,3 +27,9 @@ local noRemapAndSilent = { noremap = true, silent = true }
 -- delete word shortcut
 vim.keymap.set("i", "<A-BS>", "<Esc>cc", noRemapAndSilent)
 vim.keymap.set("i", "<C-h>", "<C-w>", noRemapAndSilent)
+
+vim.keymap.set("n", "<leader>cp", function()
+  local filepath = vim.fn.expand("%")
+  vim.fn.setreg("+", filepath) -- Copies to system clipboard
+  vim.notify("Copied relative path: " .. filepath)
+end, { desc = "Copy relative path of current file" })
