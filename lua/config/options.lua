@@ -3,8 +3,7 @@
 -- Add any additional options here
 
 vim.opt.winbar = "%=%m %f"
-vim.opt.fileformat = "unix"
-vim.opt.fileformats = "unix"
+vim.opt.fileformat = "dos"
 vim.opt.wrap = true
 
 vim.opt.shell = "pwsh"

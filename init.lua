@@ -3,13 +3,13 @@ vim.g.python3_host_prog = "C:\\Windows\\py.exe"
 
 -- avoid eslint warning to insert "cr"
 vim.cmd([[
- autocmd BufWritePre * :set fileformat=unix
+ autocmd BufWritePre * :set fileformat=dos 
 ]])
 
 vim.api.nvim_create_autocmd("BufReadPost", {
   pattern = "*",
   callback = function()
-    vim.opt.fileformat = "unix"
+    vim.opt.fileformat = "dos"
   end,
 })
 
