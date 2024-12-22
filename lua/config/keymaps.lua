@@ -28,8 +28,21 @@ local noRemapAndSilent = { noremap = true, silent = true }
 vim.keymap.set("i", "<A-BS>", "<Esc>cc", noRemapAndSilent)
 vim.keymap.set("i", "<C-h>", "<C-w>", noRemapAndSilent)
 
+local copyRelativePathOptions =
+  vim.tbl_extend("force", noRemapAndSilent, { desc = "Copy relative path of current file" })
+
 vim.keymap.set("n", "<leader>cp", function()
+  vim.notify("test executed", vim.log.levels.INFO) -- Log a notification
   local filepath = vim.fn.expand("%")
   vim.fn.setreg("+", filepath) -- Copies to system clipboard
   vim.notify("Copied relative path: " .. filepath)
-end, { desc = "Copy relative path of current file" })
+end, copyRelativePathOptions)
+
+local triggerAutoCompleteOptions = vim.tbl_extend("force", noRemapAndSilent, { desc = "Trigger autocomplete" })
+
+vim.keymap.set("i", "<C-L>", function()
+  local blink = require("blink-cmp")
+  blink.show({
+    providers = { "lsp" },
+  })
+end, triggerAutoCompleteOptions)
