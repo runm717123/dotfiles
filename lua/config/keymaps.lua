@@ -46,3 +46,6 @@ vim.keymap.set("i", "<C-L>", function()
     providers = { "lsp" },
   })
 end, triggerAutoCompleteOptions)
+
+vim.keymap.set("n", "<leader>w\\", ":vsplit<CR>", noRemapAndSilent)
+vim.keymap.set("n", "<leader>w-", ":split<CR>", noRemapAndSilent)
