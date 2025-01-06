@@ -49,3 +49,10 @@ end, triggerAutoCompleteOptions)
 
 vim.keymap.set("n", "<leader>w\\", ":vsplit<CR>", noRemapAndSilent)
 vim.keymap.set("n", "<leader>w-", ":split<CR>", noRemapAndSilent)
+
+-- Disable the 'q' key in normal mode
+vim.keymap.set("n", "q", "<Nop>", { desc = "Disable q key" })
+
+-- Optionally map another key for recording macros
+vim.keymap.set("n", "<Leader>r", "q", { desc = "Start/Stop recording a macro" })
+vim.keymap.set("n", "Q", "@q", { desc = "Execute last recorded macro" })
