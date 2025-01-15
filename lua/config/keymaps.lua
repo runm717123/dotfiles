@@ -56,3 +56,10 @@ vim.keymap.set("n", "q", "<Nop>", { desc = "Disable q key" })
 -- Optionally map another key for recording macros
 vim.keymap.set("n", "<Leader>r", "q", { desc = "Start/Stop recording a macro" })
 vim.keymap.set("n", "Q", "@q", { desc = "Execute last recorded macro" })
+
+-- quickfix
+vim.keymap.set("n", "<leader>xc", ":cexpr []<CR>", { desc = "Clear Quickfix List" })
+vim.keymap.set("n", "<leader>xa", function()
+  vim.fn.setqflist({}, "a", { title = "Quickfix", items = { { filename = vim.fn.expand("%") } } })
+  vim.notify("Added current file to Quickfix List", vim.log.levels.INFO)
+end, { desc = "Add Current File to Quickfix List" })
