@@ -63,3 +63,17 @@ vim.keymap.set("n", "<leader>xa", function()
   vim.fn.setqflist({}, "a", { title = "Quickfix", items = { { filename = vim.fn.expand("%") } } })
   vim.notify("Added current file to Quickfix List", vim.log.levels.INFO)
 end, { desc = "Add Current File to Quickfix List" })
+
+-- Function to insert console.log under the cursor
+local function add_console_log()
+  local line_number = vim.api.nvim_win_get_cursor(0)[1]
+  local var_name = vim.fn.expand("<cword>")
+  local file_name = vim.fn.expand("%")
+  -- Prepare the console.log statement
+  local log_statement = string.format([[console.log(%s, "%s - %s:%d");]], var_name, var_name, file_name, line_number)
+  -- Insert the line below the current line
+  vim.api.nvim_buf_set_lines(0, line_number, line_number, false, { log_statement })
+end
+
+-- Keymap to trigger the console.log insertion
+vim.keymap.set("n", "<leader>xd", add_console_log, { desc = "Add console.log under cursor" })
