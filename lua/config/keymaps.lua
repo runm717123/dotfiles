@@ -47,9 +47,6 @@ vim.keymap.set("i", "<C-L>", function()
   })
 end, triggerAutoCompleteOptions)
 
-vim.keymap.set("n", "<leader>w\\", ":vsplit<CR>", noRemapAndSilent)
-vim.keymap.set("n", "<leader>w-", ":split<CR>", noRemapAndSilent)
-
 -- Disable the 'q' key in normal mode
 vim.keymap.set("n", "q", "<Nop>", { desc = "Disable q key" })
 
@@ -68,9 +65,10 @@ end, { desc = "Add Current File to Quickfix List" })
 local function add_console_log()
   local line_number = vim.api.nvim_win_get_cursor(0)[1]
   local var_name = vim.fn.expand("<cword>")
-  local file_name = vim.fn.expand("%")
+  -- Get the current file name (without the full path)
+  local file_name = vim.fn.expand("%:t")
   -- Prepare the console.log statement
-  local log_statement = string.format([[console.log(%s, "%s - %s:%d");]], var_name, var_name, file_name, line_number)
+  local log_statement = string.format([[console.log("%s:%d -> %s", %s);]], file_name, line_number, var_name, var_name)
   -- Insert the line below the current line
   vim.api.nvim_buf_set_lines(0, line_number, line_number, false, { log_statement })
 end
