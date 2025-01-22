@@ -14,7 +14,11 @@ return {
   {
     "saghen/blink.cmp",
     optional = true,
-    dependencies = { "Exafunction/codeium.nvim", "saghen/blink.compat" },
+    dependencies = { "Exafunction/codeium.vim", "saghen/blink.compat" },
+    keymap = {
+      preset = "enter",
+      ["<CR>"] = { "select_and_accept" },
+    },
     opts = {
       sources = {
         compat = { "codeium" },
