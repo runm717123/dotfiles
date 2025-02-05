@@ -36,8 +36,6 @@ return {
       "lua",
       "luadoc",
       "luap",
-      "markdown",
-      "markdown_inline",
       "printf",
       "python",
       "query",
