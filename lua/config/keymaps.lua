@@ -60,6 +60,23 @@ vim.keymap.set("n", "<leader>xa", function()
   vim.fn.setqflist({}, "a", { title = "Quickfix", items = { { filename = vim.fn.expand("%") } } })
   vim.notify("Added current file to Quickfix List", vim.log.levels.INFO)
 end, { desc = "Add Current File to Quickfix List" })
+-- add opened buffers
+vim.keymap.set("n", "<leader>xb", function()
+  local bufs = vim.api.nvim_list_bufs()
+  local qf_list = {}
+
+  for _, buf in ipairs(bufs) do
+    if vim.api.nvim_buf_is_loaded(buf) and vim.bo[buf].buflisted then
+      local bufname = vim.api.nvim_buf_get_name(buf)
+      if bufname ~= "" then
+        table.insert(qf_list, { filename = bufname, lnum = 1, col = 1, text = "Buffer: " .. bufname })
+      end
+    end
+  end
+
+  vim.fn.setqflist(qf_list, "r")
+  vim.cmd("copen")
+end, { desc = "Add Open Buffers to Quickfix List" })
 
 -- Function to insert console.log under the cursor
 local function add_console_log()
