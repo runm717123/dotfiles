@@ -56,7 +56,7 @@ vim.keymap.set("n", "Q", "@q", { desc = "Execute last recorded macro" })
 
 -- quickfix
 vim.keymap.set("n", "<leader>xc", ":cexpr []<CR>", { desc = "Clear Quickfix List" })
-vim.keymap.set("n", "<leader>xa", function()
+vim.keymap.set("n", "<F1>", function()
   vim.fn.setqflist({}, "a", { title = "Quickfix", items = { { filename = vim.fn.expand("%") } } })
   vim.notify("Added current file to Quickfix List", vim.log.levels.INFO)
 end, { desc = "Add Current File to Quickfix List" })
