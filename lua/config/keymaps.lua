@@ -26,6 +26,9 @@ local noRemapAndSilent = { noremap = true, silent = true }
 
 -- delete word shortcut
 vim.keymap.set("i", "<A-BS>", "<Esc>cc", noRemapAndSilent)
+-- neovide
+vim.keymap.set("i", "<C-BS>", "<C-w>", noRemapAndSilent)
+-- nvim
 vim.keymap.set("i", "<C-h>", "<C-w>", noRemapAndSilent)
 
 local copyRelativePathOptions =
