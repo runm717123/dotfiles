@@ -23,7 +23,8 @@ This repository contains my dotfiles managed using **Home Manager**. It allows m
 ### 1️⃣ Install **Home Manager**
 If Home Manager is not installed, install it first:
 ```sh
-nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
+
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
 nix-shell '<home-manager>' -A install
 ```
