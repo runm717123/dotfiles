@@ -1,0 +1,19 @@
+gui:
+  editor: "nvim"
+os:
+  editPreset: "nvim"
+  edit: "nvim {{filename}}"
+  editAtLine: "nvim --line={{line}} {{filename}}"
+  editAtLineAndWait: "nvim --block --line={{line}} {{filename}}"
+  editInTerminal: true
+  openDirInEditor: "nvim {{dir}}"
+customCommands:
+  - key: "W"
+    prompts:
+      - type: "input"
+        title: "Commit"
+        initialValue: ""
+    command: git commit -m "{{index .PromptResponses 0}}" --no-verify
+    context: "global"
+    subprocess: true
+    description: "commit with ignore check"
