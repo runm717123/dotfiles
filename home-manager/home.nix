@@ -28,6 +28,7 @@
     ripgrep
     alejandra
     gh
+    nerd-fonts.inconsolata
   ];
 
   # Let Home Manager install and manage itself.
