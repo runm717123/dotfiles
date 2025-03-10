@@ -27,6 +27,7 @@
     fzf
     ripgrep
     alejandra
+    gh
   ];
 
   # Let Home Manager install and manage itself.
@@ -43,7 +44,7 @@
 
   programs.git = {
     enable = true;
-    userName = "runm717123"; # Change to your actual name
+    userName = "runm717123"; # Change to your actual username
     userEmail = "runm717123@gmail.com"; # Change to your email
 
     extraConfig = {
