@@ -52,6 +52,7 @@
       pull.rebase = false;
       core.editor = "nvim";
       push.default = "simple";
+      include.path = "~/.gitconfig";
       alias = {
         ch = "checkout";
         br = "branch";
@@ -59,6 +60,11 @@
         cm = "commit -m";
         lg = "log --oneline --graph --decorate";
       };
+
+      # comment this if there is a problem or you not using gh cli
+      # it replace the role of `gh auth setup-git`
+      credential."https://github.com".helper = "!gh auth git-credential";
+      credential."https://gist.github.com".helper = "!gh auth git-credential";
     };
   };
 
