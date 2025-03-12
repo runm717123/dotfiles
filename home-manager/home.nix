@@ -30,6 +30,12 @@
     gh
     nerd-fonts.inconsolata
     unzip
+
+    yazi
+    file
+    jq
+    fd
+    zoxide
   ];
 
   # Let Home Manager install and manage itself.
@@ -102,6 +108,7 @@
       source = "${config.home.homeDirectory}/dotfiles/nvim";
       recursive = true;
     };
+    ".config/nvim/lazy-lock.json".text = "";
     ".config/lazygit/config.yml".source = "${config.home.homeDirectory}/dotfiles/lazygit/config.yml";
   };
 
