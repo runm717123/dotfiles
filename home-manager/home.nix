@@ -87,7 +87,7 @@
   programs.oh-my-posh = {
     enable = true;
     enableBashIntegration = true;
-    useTheme = "cobalt2";
+    settings = builtins.fromJSON (builtins.readFile "${config.home.homeDirectory}/dotfiles/oh-my-posh/cobalt2-custom.omp");
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
