@@ -73,6 +73,7 @@
     enable = true;
     sessionVariables = import (config.home.homeDirectory + "/dotfiles/env.nix");
     shellAliases = {
+      hs = "home-manager switch";
       g = "git";
       lg = "lazygit";
       "..." = "cd ../..";
