@@ -23,6 +23,8 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    nodejs_22
+    corepack_22
     gcc
     fzf
     ripgrep
@@ -107,5 +109,6 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    COREPACK_ENABLE = "1";
   };
 }
