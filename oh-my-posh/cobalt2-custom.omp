@@ -17,11 +17,11 @@
           "type": "path"
         },
         {
-          "background": "#D1F8EF",
+          "background": "#4F959D",
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#A1E3F9{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#578FCA{{ end }}",
-            "{{ if gt .Ahead 0 }}#A1E3F9{{ end }}",
+            "{{ if gt .Ahead 0 }}#D1F8EF{{ end }}",
             "{{ if gt .Behind 0 }}#578FCA{{ end }}"
           ],
           "foreground": "#000000",
