@@ -6,10 +6,8 @@
   # NOTE: replace "/dotefiles" here with the parent folder name
   # e.g if this file is at dota2/home-manager/home.nix then use "dota2"
 
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = "ndev";
-  home.homeDirectory = "/home/ndev";
+  home.username = builtins.getEnv "USER";
+  home.homeDirectory = "/home/${builtins.getEnv "USER"}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

@@ -42,10 +42,6 @@ Create `~/dotfiles/home-manager/env.nix` and define your environment variables:
   GITHUB_TOKEN = "your_github_token_here";
 }
 ```
-Then, import it in `home.nix`:
-```nix
-home.sessionVariables = import ./env.nix;
-```
 
 ### 4️⃣ Symlink Home Manager Configuration
 ```sh
@@ -60,8 +56,14 @@ home-manager switch
 ## 🛠️ Updating Configuration
 Modify `home.nix` or other config files, then run:
 ```sh
-home-manager switch
+home-manager switch 
 ```
+or if its conflicting with your system
+
+```sh
+home-manager switch -b backup
+```
+
 
 ## 🔄 Syncing Across Machines
 If you make changes, commit them and push to your Git repository:
