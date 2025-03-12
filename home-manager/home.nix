@@ -29,6 +29,7 @@
     alejandra
     gh
     nerd-fonts.inconsolata
+    unzip
   ];
 
   # Let Home Manager install and manage itself.
@@ -71,6 +72,7 @@
 
   programs.bash = {
     enable = true;
+    enableCompletion = true;
     sessionVariables = import (config.home.homeDirectory + "/dotfiles/env.nix");
     shellAliases = {
       hs = "home-manager switch";
@@ -78,6 +80,7 @@
       lg = "lazygit";
       "..." = "cd ../..";
       n = "nvim";
+      nn = "$HOME/dotfiles/executables/neovide.exe --wsl";
     };
   };
 
