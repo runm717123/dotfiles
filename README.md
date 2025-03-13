@@ -31,7 +31,7 @@ nix-shell '<home-manager>' -A install
 
 ### 2️⃣ Clone the Dotfiles Repository
 ```sh
-git clone https://github.com/yourusername/dotfiles ~/dotfiles
+git clone https://github.com/yourusername/dotfiles dotfiles
 ```
 
 ### 3️⃣ Create `env.nix` for Environment Variables
@@ -39,7 +39,8 @@ Create `~/dotfiles/home-manager/env.nix` and define your environment variables:
 ```nix
 {
   CODESTATS_API_KEY = "your_api_key_here";
-  GITHUB_TOKEN = "your_github_token_here";
+  GITHUB_USERNAME = "your_github_username_here";
+  GITHUB_EMAIL = "your_github_email_here";
 }
 ```
 
@@ -74,15 +75,6 @@ git push
 ```
 On another machine, pull the changes and run `home-manager switch`.
 
-## 📦 Installing Packages
-To install system-wide packages, add them to `home.nix` under `home.packages`:
-```nix
-home.packages = [
-  pkgs.neovim
-  pkgs.ripgrep
-  pkgs.git
-];
-```
 Then apply changes:
 ```sh
 home-manager switch
