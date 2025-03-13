@@ -88,6 +88,10 @@
       n = "nvim";
       nn = "$HOME/dotfiles/executables/neovide.exe --wsl";
     };
+    initExtra = ''
+      # Set up the Neovim plugin manager
+      rm ~/.config/nvim/lazy-lock.json
+    '';
   };
 
   programs.oh-my-posh = {
