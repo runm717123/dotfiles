@@ -27,10 +27,9 @@
     fzf
     ripgrep
     alejandra
-    gh
     nerd-fonts.inconsolata
     unzip
-
+    gitAndTools.gh
     yazi
     file
     jq
@@ -52,8 +51,8 @@
 
   programs.git = {
     enable = true;
-    userName = "runm717123"; # Change to your actual username
-    userEmail = "runm717123@gmail.com"; # Change to your email
+    userName = config.programs.bash.sessionVariables.GIT_USERNAME;
+    userEmail = config.programs.bash.sessionVariables.GIT_EMAIL;
 
     extraConfig = {
       init.defaultBranch = "main";
@@ -67,12 +66,13 @@
         st = "status";
         cm = "commit -m";
         lg = "log --oneline --graph --decorate";
+        undo = "reset HEAD~ --soft";
+        include = "commit --amend --no-edit";
       };
 
       # comment this if there is a problem or you not using gh cli
       # it replace the role of `gh auth setup-git`
       credential."https://github.com".helper = "!gh auth git-credential";
-      credential."https://gist.github.com".helper = "!gh auth git-credential";
     };
   };
 
