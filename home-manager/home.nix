@@ -87,10 +87,12 @@
       "..." = "cd ../..";
       n = "nvim";
       nn = "$HOME/dotfiles/executables/neovide.exe --wsl";
+      dev = "yarn workspace @apps/go start";
     };
     initExtra = ''
       # Set up the Neovim plugin manager
       rm ~/.config/nvim/lazy-lock.json
+      eval "$(zoxide init bash)"
     '';
   };
 
