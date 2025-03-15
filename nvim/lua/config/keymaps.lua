@@ -32,12 +32,12 @@ vim.keymap.set("i", "<C-BS>", "<C-w>", noRemapAndSilent)
 vim.keymap.set("i", "<C-h>", "<C-w>", noRemapAndSilent)
 
 local copyRelativePathOptions =
-  vim.tbl_extend("force", noRemapAndSilent, { desc = "Copy relative path of current file" })
+    vim.tbl_extend("force", noRemapAndSilent, { desc = "Copy relative path of current file" })
 
 vim.keymap.set("n", "<leader>cp", function()
   vim.notify("test executed", vim.log.levels.INFO) -- Log a notification
   local filepath = vim.fn.expand("%")
-  vim.fn.setreg("+", filepath) -- Copies to system clipboard
+  vim.fn.setreg("+", filepath)                     -- Copies to system clipboard
   vim.notify("Copied relative path: " .. filepath)
 end, copyRelativePathOptions)
 
@@ -50,11 +50,7 @@ vim.keymap.set("i", "<C-L>", function()
   })
 end, triggerAutoCompleteOptions)
 
--- Disable the 'q' key in normal mode
-vim.keymap.set("n", "q", "<Nop>", { desc = "Disable q key" })
 
--- Optionally map another key for recording macros
-vim.keymap.set("n", "<Leader>r", "q", { desc = "Start/Stop recording a macro" })
 vim.keymap.set("n", "Q", "@q", { desc = "Execute last recorded macro" })
 
 -- quickfix
