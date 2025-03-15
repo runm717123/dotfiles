@@ -36,16 +36,21 @@
     zoxide
   ];
 
+  home.sessionVariables =
+    {
+      COREPACK_ENABLE = "1";
+      _ZO_DOCTOR = 0; # disable zoxide doctor annoying message
+    }
+    ## combine with the env.nix file
+    // import (config.home.homeDirectory + "/dotfiles/env.nix");
+
   imports = [
     ./setups/git.nix
     ./setups/nvim.nix
     ./setups/bash.nix
+    ./setups/postgresql.nix
   ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  home.sessionVariables = {
-    COREPACK_ENABLE = "1";
-  };
 }

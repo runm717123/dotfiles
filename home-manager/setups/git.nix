@@ -5,8 +5,8 @@
 
   programs.git = {
     enable = true;
-    userName = config.programs.bash.sessionVariables.GIT_USERNAME;
-    userEmail = config.programs.bash.sessionVariables.GIT_EMAIL;
+    userName = config.home.sessionVariables.GIT_USERNAME;
+    userEmail = config.home.sessionVariables.GIT_EMAIL;
 
     extraConfig = {
       init.defaultBranch = "main";
