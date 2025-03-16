@@ -34,6 +34,7 @@
     fd
     postgresql_16
     zoxide
+    turbo
   ];
 
   home.sessionVariables =
