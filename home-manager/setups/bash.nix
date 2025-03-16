@@ -19,8 +19,8 @@
       bind 'set vi-ins-mode-string \1\e[5 q\2'  # Bar cursor for Insert mode
       bind 'set vi-cmd-mode-string \1\e[1 q\2'  # Block cursor for Normal mode
 
-      # Set up the Neovim plugin manager
       rm ~/.config/nvim/lazy-lock.json
+
       eval "$(zoxide init bash)"
     '';
   };

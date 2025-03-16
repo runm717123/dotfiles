@@ -6,6 +6,7 @@ This repository contains my dotfiles managed using **Home Manager**. It allows m
 ```
 ~/dotfiles/
 ├── home-manager/       # Home Manager configuration
+│   ├── setups/         # nix files for programs
 │   ├── home.nix        # Main Home Manager config
 │   ├── env.nix         # Environment variables
 │   └── ...
