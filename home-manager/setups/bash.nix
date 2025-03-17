@@ -13,11 +13,11 @@
       dev = "yarn workspace @apps/go start";
     };
     initExtra = ''
-      set -o vi
-
-      bind 'set show-mode-in-prompt on'
-      bind 'set vi-ins-mode-string \1\e[5 q\2'  # Bar cursor for Insert mode
-      bind 'set vi-cmd-mode-string \1\e[1 q\2'  # Block cursor for Normal mode
+      # set -o vi
+      #
+      # bind 'set show-mode-in-prompt on'
+      # bind 'set vi-ins-mode-string \1\e[5 q\2'  # Bar cursor for Insert mode
+      # bind 'set vi-cmd-mode-string \1\e[1 q\2'  # Block cursor for Normal mode
 
       rm ~/.config/nvim/lazy-lock.json
 

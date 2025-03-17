@@ -20,6 +20,7 @@
 
   home.packages = with pkgs; [
     nodejs_22
+    nest-cli
     corepack_22
     gcc
     fzf
