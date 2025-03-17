@@ -35,10 +35,18 @@ local copyRelativePathOptions =
     vim.tbl_extend("force", noRemapAndSilent, { desc = "Copy relative path of current file" })
 
 vim.keymap.set("n", "<leader>cp", function()
-  vim.notify("test executed", vim.log.levels.INFO) -- Log a notification
   local filepath = vim.fn.expand("%")
-  vim.fn.setreg("+", filepath)                     -- Copies to system clipboard
-  vim.notify("Copied relative path: " .. filepath)
+  local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+
+  if git_root then
+    local relative_path = filepath:gsub("^" .. vim.pesc(git_root .. "/"), "")
+    vim.fn.setreg("+", "./" .. relative_path)
+    vim.notify("Copied relative path: ./" .. relative_path)
+  else
+    local filepath = vim.fn.expand("%")
+    vim.fn.setreg("+", filepath)
+    vim.notify("Copied path without git: " .. filepath)
+  end
 end, copyRelativePathOptions)
 
 local triggerAutoCompleteOptions = vim.tbl_extend("force", noRemapAndSilent, { desc = "Trigger autocomplete" })
