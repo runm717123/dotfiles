@@ -22,6 +22,11 @@
         lg = "log --oneline --graph --decorate";
         undo = "reset HEAD~ --soft";
         include = "commit --amend --no-edit";
+        st = status;
+        get = pull origin;
+        post = push origin;
+        backup = commit - am "backup";
+        config-edit = config - -global - -edit;
       };
 
       # comment this if there is a problem or you not using gh cli
