@@ -32,13 +32,15 @@ vim.keymap.set("i", "<C-BS>", "<C-w>", noRemapAndSilent)
 vim.keymap.set("i", "<C-h>", "<C-w>", noRemapAndSilent)
 
 local copyRelativePathOptions =
-    vim.tbl_extend("force", noRemapAndSilent, { desc = "Copy relative path of current file" })
+  vim.tbl_extend("force", noRemapAndSilent, { desc = "Copy relative path of current file" })
 
 vim.keymap.set("n", "<leader>cp", function()
   local filepath = vim.fn.expand("%")
-  local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+  local git_root_output = vim.fn.systemlist({ "sh", "-c", "git rev-parse --show-toplevel" })
 
-  if git_root then
+  -- Ensure git command output is not empty
+  if git_root_output and #git_root_output > 0 and git_root_output[1] ~= "" then
+    local git_root = git_root_output[1]
     local relative_path = filepath:gsub("^" .. vim.pesc(git_root .. "/"), "")
     vim.fn.setreg("+", "./" .. relative_path)
     vim.notify("Copied relative path: ./" .. relative_path)
@@ -57,7 +59,6 @@ vim.keymap.set("i", "<C-L>", function()
     providers = { "lsp" },
   })
 end, triggerAutoCompleteOptions)
-
 
 vim.keymap.set("n", "Q", "@q", { desc = "Execute last recorded macro" })
 
