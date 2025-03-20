@@ -26,6 +26,8 @@
         post = "push origin";
         backup = "commit - am \"backup\"";
         config-edit = "config --global --edit";
+        user = "config user.name";
+        email = "config user.email";
       };
 
       # comment this if there is a problem or you not using gh cli
