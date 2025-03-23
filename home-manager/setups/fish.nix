@@ -13,6 +13,15 @@
     };
     shellInitLast = ''
       zoxide init fish | source
+      if test "$MODE" = "home"
+        if not ss -tulnp | grep -q ":5433"
+          pgstart
+        else
+          echo "Postgres is already running"
+        end
+      else
+        echo "Not in home mode"
+      end
     '';
   };
 }

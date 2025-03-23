@@ -1,7 +1,7 @@
 {config, ...}: {
   programs.bash = {
     enable = true;
-    enableCompletion = true;
+    # enableCompletion = true;
     shellAliases = {
       hs = "home-manager switch";
       hsr = "home-manager switch && exit";

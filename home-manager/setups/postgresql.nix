@@ -10,7 +10,7 @@ in {
     PGHOST = "$HOME/postgres/lock";
   };
 
-  programs.bash.shellAliases = {
+  programs.fish.shellAliases = {
     pgk = "sudo pkill -9 postgres"; # kill postgres
     pgport = "ss -tulnp | grep postgres"; # get postgres port
     pgstart = "pg_ctl start -o \"-p 5433 -k $PGHOST -c listen_addresses='*'\"";
