@@ -12,6 +12,9 @@
       dev = "yarn workspace @apps/go start";
     };
     shellInitLast = ''
+      # alt+f to move forward
+      bind \ef forward-word
+
       zoxide init fish | source
       if test "$MODE" = "home"
         if not ss -tulnp | grep -q ":5433"
