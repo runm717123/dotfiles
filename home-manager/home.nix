@@ -8,7 +8,6 @@
 
   home.username = builtins.getEnv "USER";
   home.homeDirectory = "/home/${builtins.getEnv "USER"}";
-
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -50,6 +49,7 @@
     ./setups/git.nix
     ./setups/nvim.nix
     ./setups/bash.nix
+    ./setups/fish.nix
     ./setups/postgresql.nix
   ];
 

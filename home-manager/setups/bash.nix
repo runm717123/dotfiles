@@ -1,7 +1,7 @@
 {config, ...}: {
   programs.bash = {
     enable = true;
-    enableCompletion = true;
+    # enableCompletion = true;
     shellAliases = {
       hs = "home-manager switch";
       hsr = "home-manager switch && exit";
@@ -19,6 +19,10 @@
       # bind 'set show-mode-in-prompt on'
       # bind 'set vi-ins-mode-string \1\e[5 q\2'  # Bar cursor for Insert mode
       # bind 'set vi-cmd-mode-string \1\e[1 q\2'  # Block cursor for Normal mode
+
+      if [ -x "$HOME/.nix-profile/bin/fish" ]; then
+          exec $HOME/.nix-profile/bin/fish
+      fi
 
       rm -f ~/.config/nvim/lazy-lock.json
 
