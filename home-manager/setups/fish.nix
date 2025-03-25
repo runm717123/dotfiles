@@ -11,6 +11,9 @@
       nn = "$HOME/dotfiles/executables/neovide.exe --wsl";
       dev = "yarn workspace @apps/go start";
     };
+    interactiveShellInit = ''
+      rm -f ~/.config/nvim/lazy-lock.json
+    '';
     shellInitLast = ''
       # alt+f to move forward
       bind \ef forward-word
