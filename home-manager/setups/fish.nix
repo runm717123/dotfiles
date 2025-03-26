@@ -10,6 +10,7 @@
       n = "nvim";
       nn = "$HOME/dotfiles/executables/neovide.exe --wsl";
       dev = "yarn workspace @apps/go start";
+      yw = "yarn workspace";
     };
     interactiveShellInit = ''
       rm -f ~/.config/nvim/lazy-lock.json

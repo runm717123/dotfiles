@@ -10,8 +10,6 @@
       "..." = "cd ../..";
       n = "nvim";
       nn = "$HOME/dotfiles/executables/neovide.exe --wsl";
-      yw = "yarn workspace";
-      dev = "yarn workspace @apps/go start";
     };
     initExtra = ''
       # set -o vi
