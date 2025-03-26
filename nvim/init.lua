@@ -1,5 +1,4 @@
 vim.opt.cmdheight = 2 -- Increase command-line height
-vim.g.python3_host_prog = "C:\\Windows\\py.exe"
 
 if vim.g.neovide then
   vim.o.guifont = "InconsolataGo Nerd Font Mono" -- text below applies for VimScript

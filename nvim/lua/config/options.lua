@@ -3,10 +3,8 @@
 -- Add any additional options here
 
 vim.opt.winbar = "%=%m %f"
-vim.opt.fileformat = "dos"
 vim.opt.wrap = true
 
-vim.opt.shell = "pwsh"
 vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
 vim.opt.shellquote = ""
 vim.opt.shellxquote = ""
