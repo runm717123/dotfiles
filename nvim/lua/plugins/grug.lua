@@ -11,7 +11,7 @@ return {
         grug.open({
           transient = true,
           prefills = {
-            filesFilter = (ext == "js" or ext == "ts" or ext == "tsx") and "*.{ts,tsx,js}"
+            filesFilter = (ext == "js" or ext == "ts" or ext == "tsx") and "*.{ts,tsx,js}\n!*.test.*"
               or (ext and ext ~= "" and "*." .. ext or nil),
           },
         })
