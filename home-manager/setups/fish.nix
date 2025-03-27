@@ -12,6 +12,7 @@
       dev = "yarn workspace @apps/go start";
       yw = "yarn workspace";
       dn = "rm -f ~/.config/nvim/lazy-lock.json";
+      gpm = "git pull origin main";
     };
     interactiveShellInit = ''
       rm -f ~/.config/nvim/lazy-lock.json
