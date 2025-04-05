@@ -36,7 +36,7 @@ git clone https://github.com/yourusername/dotfiles dotfiles
 ```
 
 ### 3️⃣ Create `env.nix` for Environment Variables
-Create `~/dotfiles/home-manager/env.nix` and define your environment variables:
+Create `~/dotfiles/env.nix` and define your environment variables:
 ```nix
 {
   CODESTATS_API_KEY = "your_api_key_here";
