@@ -21,9 +21,10 @@ This repository contains my dotfiles managed using **Home Manager**. It allows m
 
 ## 🚀 Setting Up on a New Machine
 
-### 1️⃣ Install **Home Manager**
-If Home Manager is not installed, install it first:
+### 1️⃣ Prepare required package
+If Nix and Home Manager is not installed, install it first:
 ```sh
+sh <(curl -L https://nixos.org/nix/install) --daemon
 
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
