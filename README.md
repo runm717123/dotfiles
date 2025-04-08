@@ -8,7 +8,6 @@ This repository contains my dotfiles managed using **Home Manager**. It allows m
 ├── home-manager/       # Home Manager configuration
 │   ├── setups/         # nix files for programs
 │   ├── home.nix        # Main Home Manager config
-│   ├── env.nix         # Environment variables
 │   └── ...
 ├── nvim/               # Neovim configuration
 │   ├── init.lua        # LazyVim setup
@@ -16,7 +15,8 @@ This repository contains my dotfiles managed using **Home Manager**. It allows m
 ├── lazygit/            # Lazygit configuration
 │   ├── config.yml      # Lazygit settings
 │   └── ...
-└── .env                # Environment variables (ignored by Git)
+├── .env.nix            # Environment variables (gitignored)
+└── .secret.alias.nix   # Additional shell alias (gitignored)
 ```
 
 ## 🚀 Setting Up on a New Machine
@@ -43,6 +43,13 @@ Create `~/dotfiles/env.nix` and define your environment variables:
   CODESTATS_API_KEY = "your_api_key_here";
   GITHUB_USERNAME = "your_github_username_here";
   GITHUB_EMAIL = "your_github_email_here";
+}
+```
+
+#### 💡 Optional: Add `secret.alias.env`
+```nix
+{
+  "open-ssh" = "cmd to connect ssh";
 }
 ```
 
