@@ -6,6 +6,9 @@ local cowboy = require("mine.cowboy")
 
 cowboy() -- prevent bad behaviour
 
+-- prevent copy replaced text after pasting
+vim.keymap.set("x", "p", '"_dP', { noremap = true, silent = true })
+
 -- Increment/decrement
 vim.keymap.set("n", "+", "<C-a>")
 vim.keymap.set("n", "-", "<C-x>")
