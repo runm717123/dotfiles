@@ -5,6 +5,18 @@
 }: {
   programs.fish = {
     enable = true;
+    functions = {
+      clip = ''
+        function clip
+            if test (count $argv) -eq 0
+                echo "Usage: copy <command>"
+                return 1
+            end
+            set command (string join " " $argv)
+            eval $command | clip.exe
+        end
+      '';
+    };
     shellAliases =
       {
         hs = "home-manager switch";
