@@ -1,5 +1,6 @@
 return {
   "MagicDuck/grug-far.nvim",
+  commit = "29f460c5c24765cba54952ce2de781e5d82ee6f6",
   opts = { headerMaxWidth = 80 },
   cmd = "GrugFar",
   keys = {
