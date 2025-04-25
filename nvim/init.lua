@@ -1,3 +1,4 @@
+vim.opt.backspace = { "indent", "eol", "start" }
 vim.opt.cmdheight = 2 -- Increase command-line height
 
 if vim.g.neovide then
