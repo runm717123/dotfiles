@@ -30,6 +30,8 @@
         yw = "yarn workspace";
         dn = "rm -f ~/.config/nvim/lazy-lock.json";
         gpm = "git pull origin main";
+        gcm = "git checkout main";
+        gcmu = "git checkout main && git pull origin main";
         wpwd = "wslpath -w .";
       }
       // (lib.optionalAttrs (builtins.pathExists (config.home.homeDirectory + "/dotfiles/secret.alias.nix")) (import (config.home.homeDirectory + "/dotfiles/secret.alias.nix")));
