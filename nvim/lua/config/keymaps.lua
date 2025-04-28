@@ -27,6 +27,8 @@ vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
 local noRemapAndSilent = { noremap = true, silent = true }
 
+vim.keymap.set("n", "<F2>", "gd", noRemapAndSilent)
+
 -- delete word shortcut
 vim.keymap.set("i", "<A-BS>", "<Esc>cc", noRemapAndSilent)
 -- neovide
