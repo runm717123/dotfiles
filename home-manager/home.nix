@@ -28,7 +28,7 @@
     nerd-fonts.inconsolata
     unzip
     gitAndTools.gh
-    yazi
+    # yazi
     file
     jq
     fd
