@@ -18,9 +18,8 @@
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-    nodejs_22
+    volta
     nest-cli
-    corepack_22
     gcc
     fzf
     ripgrep
@@ -44,6 +43,11 @@
     }
     ## combine with the env.nix file
     // import (config.home.homeDirectory + "/dotfiles/env.nix");
+
+  home.sessionPath = [
+    "$HOME/.volta/bin"
+    "$HOME/.local/bin"
+  ];
 
   imports = [
     ./setups/git.nix
