@@ -37,6 +37,6 @@
   };
 
   home.file = {
-    ".config/lazygit/config.yml".source = "${config.home.homeDirectory}/dotfiles/lazygit/config.yml";
+    ".config/lazygit/config.yml".source = "/Users/ndev/dotfiles/lazygit/config.yml";
   };
 }
