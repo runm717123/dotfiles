@@ -54,6 +54,8 @@
         gcm = "git checkout main";
         gcmu = "git checkout main && git pull origin main";
         wpwd = "wslpath -w .";
+        # remove Zone.Identifier
+        "rm-zi" = "find . -type f -name '*:*' -exec rm {} \;";
       }
       // (lib.optionalAttrs (builtins.pathExists (config.home.homeDirectory + "/dotfiles/secret.alias.nix")) (import (config.home.homeDirectory + "/dotfiles/secret.alias.nix")));
     interactiveShellInit = ''
