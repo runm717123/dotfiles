@@ -5,10 +5,11 @@
 
   programs.git = {
     enable = true;
-    userName = config.home.sessionVariables.GIT_USERNAME;
-    userEmail = config.home.sessionVariables.GIT_EMAIL;
-
-    extraConfig = {
+    settings = {
+      user = {
+        name = config.home.sessionVariables.GIT_USERNAME;
+        email = config.home.sessionVariables.GIT_EMAIL;
+      };
       init.defaultBranch = "main";
       pull.rebase = false;
       core.editor = "nvim";
