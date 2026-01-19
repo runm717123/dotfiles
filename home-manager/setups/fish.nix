@@ -16,6 +16,27 @@
             eval $command | clip.exe
         end
       '';
+      gpick = ''
+        function gpick
+            if test (count $argv) -eq 0
+                echo "Usage: gpick <branch-name>"
+                return 1
+            end
+            git checkout -b $argv[1] && git pull origin $argv[1]
+        end
+      '';
+      gtry = ''
+        if test (count $argv) -eq 0
+          echo "Usage: gtry <branch-name>"
+          return 1
+        end
+
+        set branch $argv[1]
+
+        git checkout main
+        and git pull origin main
+        and git checkout -b $branch
+      '';
     };
     shellAliases =
       {
