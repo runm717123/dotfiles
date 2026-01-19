@@ -23,7 +23,6 @@
   home.packages = with pkgs; [
     volta
     # nest-cli
-    gcc
     fzf
     ripgrep
     alejandra

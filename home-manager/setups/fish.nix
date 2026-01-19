@@ -19,6 +19,7 @@
     };
     shellAliases =
       {
+        py = "python3";
         hs = "home-manager switch";
         hsr = "home-manager switch && exit";
         g = "git";
@@ -42,7 +43,6 @@
       bind \ef forward-word
 
       zoxide init fish | source
-      cd ~/Documents/code
     '';
   };
 }
