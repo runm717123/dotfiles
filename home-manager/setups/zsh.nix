@@ -11,7 +11,7 @@
       n = "nvim";
       nn = "$HOME/dotfiles/executables/neovide.exe --wsl";
     };
-    initExtra = ''
+    initContent = ''
       # set -o vi
       #
       # bind 'set show-mode-in-prompt on'
