@@ -27,7 +27,6 @@
     nerd-fonts.inconsolata
     unzip
     gh
-    # yazi
     file
     jq
     fd
@@ -35,9 +34,12 @@
     zoxide
     turbo
 
+    uv
+
     podman
     podman-compose
   ];
+
 
   home.sessionVariables =
     {
@@ -59,6 +61,8 @@
     ./setups/fish.nix
     ./setups/postgresql.nix
   ];
+
+  home.enableNixpkgsReleaseCheck = false;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
