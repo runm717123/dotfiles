@@ -26,7 +26,7 @@
     alejandra
     nerd-fonts.inconsolata
     unzip
-    gitAndTools.gh
+    gh
     # yazi
     file
     jq
