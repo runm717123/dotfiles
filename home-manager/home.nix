@@ -34,6 +34,9 @@
     postgresql_16
     zoxide
     turbo
+
+    podman
+    podman-compose
   ];
 
   home.sessionVariables =
