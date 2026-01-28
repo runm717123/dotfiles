@@ -56,6 +56,7 @@
         wpwd = "wslpath -w .";
         hostinger = "ssh root@72.60.196.72";
         contabo = "ssh root@167.86.66.154";
+        py = "python3";
         # remove Zone.Identifier
         "rm-zi" = "find . -type f -name '*:*' -exec rm {} \;";
       }
