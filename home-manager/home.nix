@@ -29,7 +29,6 @@
     nerd-fonts.inconsolata
     unzip
     gh
-    # yazi
     file
     jq
     fd
@@ -39,7 +38,13 @@
     nerd-fonts.fira-code
     git-lfs
     podman-compose
+
+    uv
+
+    podman
+    podman-compose
   ];
+
 
   home.sessionVariables =
     {
@@ -61,6 +66,7 @@
     ./setups/fish.nix
   ];
 
+  home.enableNixpkgsReleaseCheck = false;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
