@@ -57,6 +57,7 @@
         hostinger = "ssh root@72.60.196.72";
         contabo = "ssh root@167.86.66.154";
         py = "python3";
+        sourcepy = "source .venv/bin/activate.fish";
         # remove Zone.Identifier
         "rm-zi" = "find . -type f -name '*:*' -exec rm {} \;";
       }
@@ -69,15 +70,15 @@
       bind \ef forward-word
 
       zoxide init fish | source
-      if test "$MODE" = "home"
-        if not ss -tulnp | grep -q ":5433"
-          # pgstart
-        else
-          echo "Postgres is already running"
-        end
-      else
-        echo "Not in home mode"
-      end
+      # if test "$MODE" = "home"
+      #   if not ss -tulnp | grep -q ":5433"
+      #     # pgstart
+      #   else
+      #     echo "Postgres is already running"
+      #   end
+      # else
+      #   echo "Not in home mode"
+      # end
     '';
   };
 }
