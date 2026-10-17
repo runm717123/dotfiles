@@ -5,6 +5,7 @@
 }: {
   programs.fish = {
     enable = true;
+    generateCompletions = false;
     functions = {
       clip = ''
         function clip
