@@ -37,12 +37,7 @@
     turbo
     nerd-fonts.fira-code
     git-lfs
-    podman-compose
-
     uv
-
-    podman
-    podman-compose
   ];
 
 
