@@ -33,11 +33,12 @@
     postgresql_16
     zoxide
     turbo
+    ffmpeg
 
     uv
-
-    podman
-    podman-compose
+    dotnet-sdk_10
+    k6
+    bubblewrap
   ];
 
 
@@ -45,6 +46,7 @@
     {
       COREPACK_ENABLE = "1";
       _ZO_DOCTOR = 0; # disable zoxide doctor annoying message
+      DOTNET_ROOT = "${pkgs.dotnet-sdk_10}/share/dotnet";
     }
     ## combine with the env.nix file
     // import (config.home.homeDirectory + "/dotfiles/env.nix");
@@ -52,6 +54,7 @@
   home.sessionPath = [
     "$HOME/.volta/bin"
     "$HOME/.local/bin"
+    "$HOME/.dotnet/tools"
   ];
 
   imports = [
