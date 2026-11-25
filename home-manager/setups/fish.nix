@@ -62,6 +62,9 @@
         "rm-zi" = "find . -type f -name '*:*' -exec rm {} \;";
       }
       // (lib.optionalAttrs (builtins.pathExists (config.home.homeDirectory + "/dotfiles/secret.alias.nix")) (import (config.home.homeDirectory + "/dotfiles/secret.alias.nix")));
+    interactiveShellInit = ''
+      fish_add_path $HOME/.opencode/bin
+    '';
     shellInitLast = ''
       # alt+f to move forward
       bind \ef forward-word
