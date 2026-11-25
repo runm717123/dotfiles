@@ -38,6 +38,7 @@
     nerd-fonts.fira-code
     git-lfs
     uv
+    go_1_27
   ];
 
 
